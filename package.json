@@ -17,6 +17,7 @@
   "author": "SoraKumo <info@croud.jp>",
   "license": "MIT",
   "scripts": {
+    "dev": "next",
     "vercel-build": "next build"
   }
 }
