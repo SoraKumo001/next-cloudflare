@@ -1,4 +1,4 @@
-import { promises as fs } from "fs";
+// import { promises as fs } from "fs";
 import { ApolloServer } from "@apollo/server";
 import {
   executeHTTPGraphQLRequest,
@@ -46,7 +46,7 @@ const resolvers: IResolvers<Context> = {
       return {
         name: file.originalFilename,
         type: file.mimetype,
-        value: await fs.readFile(file.filepath, { encoding: "utf8" }),
+        // value: await fs.readFile(file.filepath, { encoding: "utf8" }),
       };
     },
   },
