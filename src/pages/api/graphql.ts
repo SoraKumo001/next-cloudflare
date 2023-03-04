@@ -84,6 +84,6 @@ export default handler;
 export const config = {
   api: {
     bodyParser: false,
-    runtime: "experimental-edge",
+    runtime: "edge",
   },
 };
