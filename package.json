@@ -9,10 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "13.2.3",
+    "@apollo/server": "^4.4.1",
+    "@react-libraries/next-apollo-server": "^0.0.3",
+    "@react-libraries/next-exchange-ssr": "^0.0.5",
+    "@urql/exchange-multipart-fetch": "^1.0.1",
+    "graphql": "^16.6.0",
+    "next": "^13.2.3",
     "next-ssr": "^0.0.4",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "urql": "^3.0.3"
   },
   "devDependencies": {
     "@types/node": "18.14.5",
