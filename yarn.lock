@@ -149,6 +149,11 @@
   resolved "https://registry.yarnpkg.com/@apollo/utils.withrequired/-/utils.withrequired-2.0.0.tgz#f39340f7b621b214d7a063b8da3eab24a9b7b7e8"
   integrity sha512-+djpTu6AEE/A1etryZs9tmXRyDY6XXGe3G29MS/LB09uHq3pcl3n4Q5lvDTL5JWKuJixrulg5djePLDAooG8dQ==
 
+"@as-integrations/cloudflare-workers@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@as-integrations/cloudflare-workers/-/cloudflare-workers-0.1.1.tgz#da33b42fbad580e635f304d06492d353e631f5f8"
+  integrity sha512-l0KicZT09yKwyREob2fNqgq20uB+2pMNMJVHVGfy7lgvVyIz66jLQX5CG9wxvt4ovR1gIj3yn4R1WuaJM+56zw==
+
 "@babel/runtime@^7.20.7":
   version "7.21.0"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.21.0.tgz#5b55c9d394e5fcf304909a8b00c07dc217b56673"

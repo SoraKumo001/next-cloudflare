@@ -5,6 +5,7 @@ import {
   GraphQLObjectType,
   GraphQLString,
 } from "graphql";
+import { NextApiHandler } from "next";
 
 const schema = new GraphQLSchema({
   query: new GraphQLObjectType({
@@ -20,7 +21,12 @@ const schema = new GraphQLSchema({
   }),
 });
 
-export const onRequest = graphQLPlugin({
-  schema,
-  graphql,
-});
+const handler: NextApiHandler = async (req, res) => {
+  const func = graphQLPlugin({
+    schema,
+    graphql,
+  });
+  func({ request: req });
+  console.log(func);
+};
+export default handler;
