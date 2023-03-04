@@ -1,32 +1,64 @@
-import graphQLPlugin from "@cloudflare/pages-plugin-graphql";
-import {
-  graphql,
-  GraphQLSchema,
-  GraphQLObjectType,
-  GraphQLString,
-} from "graphql";
-import { NextApiHandler } from "next";
+import { promises as fs } from "fs";
+import { ApolloServer } from "@apollo/server";
+import type { IResolvers } from "@graphql-tools/utils";
+import type { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
 
-const schema = new GraphQLSchema({
-  query: new GraphQLObjectType({
-    name: "RootQueryType",
-    fields: {
-      hello: {
-        type: GraphQLString,
-        resolve() {
-          return "Hello, world!";
-        },
-      },
-    },
-  }),
-});
+/**
+ * Type settings for GraphQL
+ */
+const typeDefs = `
+  # Return date
+  scalar Date
+  type Query {
+    date: Date!
+  }
 
-const handler: NextApiHandler = async (req, res) => {
-  const func = graphQLPlugin({
-    schema,
-    graphql,
-  });
-  func({ request: req });
-  console.log(func);
+  # Return file information
+  type File {
+    name: String!
+    type: String!
+    value: String!
+  }
+  scalar Upload
+  type Mutation {
+    upload(file: Upload!): File!
+  }
+`;
+
+/**
+ * Set Context type
+ */
+type Context = { req: NextApiRequest; res: NextApiResponse };
+
+/**
+ * Resolver for GraphQL
+ */
+const resolvers: IResolvers<Context> = {
+  Query: {
+    date: async (_context, _args) => new Date(),
+  },
 };
+
+/**
+ * apolloServer
+ */
+const apolloServer = new ApolloServer<Context>({
+  typeDefs,
+  resolvers,
+});
+apolloServer.start();
+
+/**
+ * APIRoute handler for Next.js
+ */
+const handler: NextApiHandler = async (req, res) => {
+  return res.status(200).send("test");
+};
+
 export default handler;
+
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
