@@ -1,9 +1,5 @@
 // import { promises as fs } from "fs";
 import { ApolloServer } from "@apollo/server";
-import {
-  executeHTTPGraphQLRequest,
-  FormidableFile,
-} from "@react-libraries/next-apollo-server";
 import type { IResolvers } from "@graphql-tools/utils";
 import type { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
 
@@ -41,15 +37,6 @@ const resolvers: IResolvers<Context> = {
   Query: {
     date: async (_context, _args) => new Date(),
   },
-  Mutation: {
-    upload: async (_context, { file }: { file: FormidableFile }) => {
-      return {
-        name: file.originalFilename,
-        type: file.mimetype,
-        // value: await fs.readFile(file.filepath, { encoding: "utf8" }),
-      };
-    },
-  },
 };
 
 /**
@@ -65,18 +52,8 @@ apolloServer.start();
 /**
  * APIRoute handler for Next.js
  */
-const handler: NextApiHandler = async (req, res) => {
-  //Convert NextApiRequest to body format for GraphQL (multipart/form-data support).
-  return executeHTTPGraphQLRequest({
-    req,
-    res,
-    apolloServer,
-    context: async () => ({ req, res }),
-    options: {
-      //Maximum upload file size set at 10 MB
-      maxFileSize: 10 * 1024 * 1024,
-    },
-  });
+const handler: NextApiHandler = async (_req, res) => {
+  return res.json({ name: "John Doe" });
 };
 
 export default handler;
