@@ -156,6 +156,11 @@
   dependencies:
     regenerator-runtime "^0.13.11"
 
+"@cloudflare/pages-plugin-graphql@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@cloudflare/pages-plugin-graphql/-/pages-plugin-graphql-1.0.2.tgz#8e95a652e1c87e345750e9b45da6c79dd5f71f66"
+  integrity sha512-5mO+YczGiwyxekaX0YEH4OjbbiLiHn2AxFC7RcK1I8glQSB45ZaiK1hZ32lV20z0anbTR8IxG40/XVqxwFBVCw==
+
 "@eslint/eslintrc@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-2.0.0.tgz#943309d8697c52fc82c076e90c1c74fbbe69dbff"

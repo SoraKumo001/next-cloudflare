@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@apollo/server": "^4.4.1",
+    "@cloudflare/pages-plugin-graphql": "^1.0.2",
     "@react-libraries/next-apollo-server": "^0.0.3",
     "@react-libraries/next-exchange-ssr": "^0.0.5",
     "@urql/exchange-multipart-fetch": "^1.0.1",
