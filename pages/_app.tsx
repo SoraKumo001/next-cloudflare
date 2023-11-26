@@ -11,3 +11,4 @@ App.getInitialProps = async ({ res, err }: any) => {
 };
 
 export default App;
+export const runtime = "experimental-edge";
