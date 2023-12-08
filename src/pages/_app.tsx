@@ -1,9 +1,11 @@
 import { AppProps } from "next/app";
 
 const App = ({ Component, pageProps }: AppProps) => {
-  <>
-    <Component {...pageProps} />
-  </>;
+  return (
+    <>
+      <Component {...pageProps} />
+    </>
+  );
 };
 App.getInitialProps = async ({ res, err }: any) => {
   const statusCode = res ? res.statusCode : err?.statusCode;

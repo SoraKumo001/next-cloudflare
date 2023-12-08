@@ -33,7 +33,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "pages/_error.tsx",
+    "src/pages/_error.tsx.ddd",
     ".next/types/**/*.ts"
   ],
   "exclude": [
